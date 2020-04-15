@@ -1,0 +1,40 @@
+{
+    "compilerOptions": {
+        "baseUrl": "./",
+        "paths": {
+            "@ApiClients/*": [
+                "app/apiClients/*"
+            ],
+            "@Assets/*": [
+                "app/assets/*"
+            ],
+            "@Components/*": [
+                "app/components/*"
+            ],
+            "@Router/*": [
+                "app/router/*"
+            ],
+            "@Store/*": [
+                "app/store/*"
+            ],
+            "@Custom/*": [
+                "app/components/Custom/*"
+            ],
+            "@Constants/*": [
+                "app/constants/*"
+            ],
+            "@Screens/*": [
+                "app/screens/*"
+            ],
+            "@Utils/*": [
+                "app/utils/*"
+            ],
+            "@Environment/*": [
+                "app/environment/*"
+            ],
+            "@Types/*": [
+                "app/types/*"
+            ]
+        }
+    }
+}
