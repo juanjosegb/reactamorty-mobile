@@ -3,37 +3,37 @@
         "baseUrl": "./",
         "paths": {
             "@ApiClients/*": [
-                "app/apiClients/*"
+                "src/apiClients/*"
             ],
             "@Assets/*": [
-                "app/assets/*"
+                "src/assets/*"
             ],
             "@Components/*": [
-                "app/components/*"
+                "src/components/*"
             ],
             "@Router/*": [
-                "app/router/*"
+                "src/router/*"
             ],
             "@Store/*": [
-                "app/store/*"
+                "src/store/*"
             ],
             "@Custom/*": [
-                "app/components/Custom/*"
+                "src/components/Custom/*"
             ],
             "@Constants/*": [
-                "app/constants/*"
+                "src/constants/*"
             ],
             "@Screens/*": [
-                "app/screens/*"
+                "src/screens/*"
             ],
             "@Utils/*": [
-                "app/utils/*"
+                "src/utils/*"
             ],
             "@Environment/*": [
-                "app/environment/*"
+                "src/environment/*"
             ],
             "@Types/*": [
-                "app/types/*"
+                "src/types/*"
             ]
         }
     }

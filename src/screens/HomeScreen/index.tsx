@@ -1,21 +1,21 @@
 import React from 'react';
 import {Container, Content, Text} from "native-base";
-import {CustomHeader} from "../../components/Common/Header";
+import {CustomHeader} from "@Components/Common/Header";
 
 export type Props = { navigation: any }
 
-const CharactersScreen = (props: Props) => {
+const HomeScreen = (props: Props) => {
     const {navigation} = props;
     return (
         <Container>
-            <CustomHeader title={"Characters"} navigation={navigation}/>
+            <CustomHeader title={"Home"} navigation={navigation}/>
             <Content padder>
                 <Text>
-                    Characters
+                    Home
                 </Text>
             </Content>
         </Container>
     );
 }
 
-export default CharactersScreen;
+export default HomeScreen;
