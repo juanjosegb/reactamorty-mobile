@@ -1,21 +1,12 @@
 import React from 'react';
-import {createStackNavigator} from '@react-navigation/stack';
-import {Header} from "../components/Common/Header";
-import HomeScreen from "../screens/HomeScreen";
+import {createDrawerNavigator} from '@react-navigation/drawer';
+import HomeScreen from "@Screens/HomeScreen";
+import CharactersScreen from "@Screens/CharactersScreen";
 
-const Stack = createStackNavigator();
+const Drawer = createDrawerNavigator();
 
 export const Routes = () =>
-    <Stack.Navigator
-        initialRouteName="Home"
-        screenOptions={{
-            headerTintColor: 'white',
-            headerStyle: {backgroundColor: 'blue'},
-        }}
-    >
-        <Stack.Screen
-            name="Home"
-            component={HomeScreen}
-            options={{headerTitle: props => <Header/>}}
-        />
-    </Stack.Navigator>
+    <Drawer.Navigator initialRouteName="Home">
+        <Drawer.Screen name="Home" component={HomeScreen}/>
+        <Drawer.Screen name="Characters" component={CharactersScreen}/>
+    </Drawer.Navigator>

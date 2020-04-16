@@ -4,18 +4,18 @@ import {CustomHeader} from "../../components/Common/Header";
 
 export type Props = { navigation: any }
 
-const HomeScreen = (props: Props) => {
+const CharactersScreen = (props: Props) => {
     const {navigation} = props;
     return (
         <Container>
-            <CustomHeader title={"Home"} navigation={navigation}/>
+            <CustomHeader title={"Characters"} navigation={navigation}/>
             <Content padder>
                 <Text>
-                    Home
+                    Characters
                 </Text>
             </Content>
         </Container>
     );
 }
 
-export default HomeScreen;
+export default CharactersScreen;
