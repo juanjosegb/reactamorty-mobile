@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="a667e99a-e588-448d-a55a-57f946dd86cd" name="Default Changelist" comment="[FIX] Gitignore">
+      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/reactamorty-mobile.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.expo/packager-info.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.expo/settings.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="develop" />
+      </map>
+    </option>
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectId" id="1aWdTymWQMZxJkF2YkeoHwF2sVn" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="nodejs_package_manager_path" value="npm" />
+    <property name="ts.external.directory.path" value="$PROJECT_DIR$/node_modules/typescript/lib" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
+      <recent name="$PROJECT_DIR$/app/screens" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
+      <recent name="$PROJECT_DIR$/app" />
+    </key>
+  </component>
+  <component name="RunManager" selected="npm.start">
+    <configuration name="localhost" type="ReactNative" factoryName="React Native">
+      <node-interpreter value="project" />
+      <react-native value="$PROJECT_DIR$/node_modules/react-native" />
+      <platform value="ANDROID" />
+      <run-arguments value="--verbose" />
+      <envs />
+      <only-packager />
+      <browser value="98ca6316-2f89-46d9-a9e5-fa9e2b0625b3" />
+      <method v="2">
+        <option name="ReactNativePackager" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="start" type="js.build_tools.npm" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/package.json" />
+      <command value="start" />
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
+    <list>
+      <item itemvalue="npm.start" />
+      <item itemvalue="React Native.localhost" />
+    </list>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="a667e99a-e588-448d-a55a-57f946dd86cd" name="Default Changelist" comment="" />
+      <created>1586855295682</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1586855295682</updated>
+      <workItem from="1586855296904" duration="6164000" />
+      <workItem from="1586869813886" duration="4214000" />
+      <workItem from="1586874046450" duration="2724000" />
+      <workItem from="1586932721953" duration="2668000" />
+      <workItem from="1586937291025" duration="6318000" />
+      <workItem from="1586949249243" duration="10534000" />
+      <workItem from="1587018822818" duration="9211000" />
+      <workItem from="1587030269284" duration="627000" />
+      <workItem from="1587030937335" duration="10329000" />
+      <workItem from="1587045682487" duration="718000" />
+    </task>
+    <task id="LOCAL-00001" summary="First Commit">
+      <created>1586869596748</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1586869596748</updated>
+    </task>
+    <task id="LOCAL-00002" summary="[ADD] Header + Home">
+      <created>1586963961581</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1586963961581</updated>
+    </task>
+    <task id="LOCAL-00003" summary="[ADD] Navigator + Header">
+      <created>1587035128655</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1587035128655</updated>
+    </task>
+    <task id="LOCAL-00004" summary="[ADD] Babel config + Drawer">
+      <created>1587046248993</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1587046248993</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="2" />
+  </component>
+  <component name="Vcs.Log.History.Properties">
+    <option name="COLUMN_ORDER">
+      <list>
+        <option value="0" />
+        <option value="2" />
+        <option value="3" />
+        <option value="1" />
+      </list>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="First Commit" />
+    <MESSAGE value="[ADD] Header + Home" />
+    <MESSAGE value="[ADD] Navigator + Header" />
+    <MESSAGE value="[ADD] Babel config + Drawer" />
+    <option name="LAST_COMMIT_MESSAGE" value="[ADD] Babel config + Drawer" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="385" y="210" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1586944675488">
+      <screen x="0" y="27" width="1855" height="1053" />
+    </state>
+    <state x="385" y="210" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.27.1855.1053@0.27.1855.1053" timestamp="1586944675488" />
+    <state x="466" y="98" width="912" height="909" key="CommitChangelistDialog2" timestamp="1587046397412">
+      <screen x="0" y="27" width="1855" height="1053" />
+    </state>
+    <state x="466" y="98" width="912" height="909" key="CommitChangelistDialog2/0.27.1855.1053@0.27.1855.1053" timestamp="1587046397411" />
+    <state x="100" y="125" width="1655" height="855" key="DiffContextDialog" timestamp="1587043657652">
+      <screen x="0" y="27" width="1855" height="1053" />
+    </state>
+    <state x="100" y="125" width="1655" height="855" key="DiffContextDialog/0.27.1855.1053@0.27.1855.1053" timestamp="1587043657652" />
+    <state x="710" y="310" width="424" height="484" key="FileChooserDialogImpl" timestamp="1587035932661">
+      <screen x="0" y="27" width="1855" height="1053" />
+    </state>
+    <state x="710" y="310" width="424" height="484" key="FileChooserDialogImpl/0.27.1855.1053@0.27.1855.1053" timestamp="1587035932661" />
+    <state width="1832" height="278" key="GridCell.Tab.0.bottom" timestamp="1586956817671">
+      <screen x="0" y="27" width="1855" height="1053" />
+    </state>
+    <state width="1832" height="278" key="GridCell.Tab.0.bottom/0.27.1855.1053@0.27.1855.1053" timestamp="1586956817671" />
+    <state width="1832" height="278" key="GridCell.Tab.0.center" timestamp="1586956817670">
+      <screen x="0" y="27" width="1855" height="1053" />
+    </state>
+    <state width="1832" height="278" key="GridCell.Tab.0.center/0.27.1855.1053@0.27.1855.1053" timestamp="1586956817670" />
+    <state width="1832" height="278" key="GridCell.Tab.0.left" timestamp="1586956817670">
+      <screen x="0" y="27" width="1855" height="1053" />
+    </state>
+    <state width="1832" height="278" key="GridCell.Tab.0.left/0.27.1855.1053@0.27.1855.1053" timestamp="1586956817670" />
+    <state width="1832" height="278" key="GridCell.Tab.0.right" timestamp="1586956817670">
+      <screen x="0" y="27" width="1855" height="1053" />
+    </state>
+    <state width="1832" height="278" key="GridCell.Tab.0.right/0.27.1855.1053@0.27.1855.1053" timestamp="1586956817670" />
+    <state x="704" y="236" width="436" height="633" key="RollbackChangesDialog" timestamp="1586871260645">
+      <screen x="0" y="27" width="1855" height="1053" />
+    </state>
+    <state x="704" y="236" width="436" height="633" key="RollbackChangesDialog/0.27.1855.1053@0.27.1855.1053" timestamp="1586871260645" />
+    <state x="522" y="288" width="800" height="528" key="Vcs.Push.Dialog.v2" timestamp="1587046252420">
+      <screen x="0" y="27" width="1855" height="1053" />
+    </state>
+    <state x="522" y="288" width="800" height="528" key="Vcs.Push.Dialog.v2/0.27.1855.1053@0.27.1855.1053" timestamp="1587046252420" />
+    <state x="618" y="293" width="618" height="518" key="find.popup" timestamp="1587032505411">
+      <screen x="0" y="27" width="1855" height="1053" />
+    </state>
+    <state x="618" y="293" width="618" height="518" key="find.popup/0.27.1855.1053@0.27.1855.1053" timestamp="1587032505411" />
+  </component>
+</project>
