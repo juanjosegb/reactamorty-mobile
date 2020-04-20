@@ -2,7 +2,6 @@ import React from 'react';
 import {createDrawerNavigator, DrawerItemList} from '@react-navigation/drawer';
 import HomeScreen from "@Screens/HomeScreen";
 import CharactersScreen from "@Screens/CharactersScreen";
-import {View} from "react-native";
 import Logo from "@Assets/logo.jpg";
 import {Icon} from "native-base";
 import LocationsScreen from "@Screens/LocationsScreen";
