@@ -5,6 +5,9 @@ import CharactersScreen from "@Screens/CharactersScreen";
 import {Image, View} from "react-native";
 import Logo from "@Assets/logo.jpg";
 import {Icon} from "native-base";
+import LocationsScreen from "@Screens/LocationsScreen";
+import EpisodesScreen from "@Screens/EpisodesScreen";
+import ComparerScreen from "@Screens/ComparerScreen";
 
 const Drawer = createDrawerNavigator();
 
@@ -41,13 +44,13 @@ export const Routes = () =>
         <Drawer.Screen name="Characters" component={CharactersScreen} options={{
             drawerIcon: config => <Icon type={"MaterialCommunityIcons"} name="account-multiple"/>
         }}/>
-        <Drawer.Screen name="Locations" component={CharactersScreen} options={{
+        <Drawer.Screen name="Locations" component={LocationsScreen} options={{
             drawerIcon: config => <Icon type={"MaterialCommunityIcons"} name="compass"/>
         }}/>
-        <Drawer.Screen name="Episodes" component={CharactersScreen} options={{
+        <Drawer.Screen name="Episodes" component={EpisodesScreen} options={{
             drawerIcon: config => <Icon type={"MaterialCommunityIcons"} name="movie"/>
         }}/>
-        <Drawer.Screen name="Comparer" component={CharactersScreen} options={{
+        <Drawer.Screen name="Comparer" component={ComparerScreen} options={{
             drawerIcon: config => <Icon type={"MaterialCommunityIcons"} name="compare"/>
         }}/>
     </Drawer.Navigator>
