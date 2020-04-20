@@ -15,9 +15,7 @@ const Drawer = createDrawerNavigator();
 
 const DrawerContent = (children: any) => (
     <>
-        <View>
-            <DrawerImage source={Logo}/>
-        </View>
+        <DrawerImage source={Logo}/>
         <CustomDivider/>
         <DrawerItemList {...children} />
     </>
