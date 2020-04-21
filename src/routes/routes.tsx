@@ -24,18 +24,18 @@ export const Routes = () =>
     <Drawer.Navigator drawerContentOptions={{activeTintColor: '#38B1C8'}} initialRouteName="Home"
                       drawerContent={children => <DrawerContent {...children} />}>
         <Drawer.Screen name="Home" component={HomeScreen} options={{
-            drawerIcon: config => <Icon type={"MaterialCommunityIcons"} name="home"/>
+            drawerIcon: config => <Icon style={{color: "rgba(0, 0, 0, 0.54)"}} type={"MaterialCommunityIcons"} name="home"/>
         }}/>
         <Drawer.Screen name="Characters" component={CharactersScreen} options={{
-            drawerIcon: config => <Icon type={"MaterialCommunityIcons"} name="account-multiple"/>
+            drawerIcon: config => <Icon style={{color: "rgba(0, 0, 0, 0.54)"}} type={"MaterialCommunityIcons"} name="account-multiple"/>
         }}/>
         <Drawer.Screen name="Locations" component={LocationsScreen} options={{
-            drawerIcon: config => <Icon type={"MaterialCommunityIcons"} name="compass"/>
+            drawerIcon: config => <Icon style={{color: "rgba(0, 0, 0, 0.54)"}} type={"MaterialCommunityIcons"} name="compass"/>
         }}/>
         <Drawer.Screen name="Episodes" component={EpisodesScreen} options={{
-            drawerIcon: config => <Icon type={"MaterialCommunityIcons"} name="movie"/>
+            drawerIcon: config => <Icon style={{color: "rgba(0, 0, 0, 0.54)"}} type={"MaterialCommunityIcons"} name="movie"/>
         }}/>
         <Drawer.Screen name="Comparer" component={ComparerScreen} options={{
-            drawerIcon: config => <Icon type={"MaterialCommunityIcons"} name="compare"/>
+            drawerIcon: config => <Icon style={{color: "rgba(0, 0, 0, 0.54)"}} type={"MaterialCommunityIcons"} name="compare"/>
         }}/>
     </Drawer.Navigator>

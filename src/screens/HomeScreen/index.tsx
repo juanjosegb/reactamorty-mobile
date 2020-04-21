@@ -2,7 +2,7 @@ import React, {useRef, useState} from 'react';
 import {Container, Content} from "native-base";
 import {CustomHeader} from "@Components/Common/Header";
 import Carousel, {ParallaxImage} from 'react-native-snap-carousel';
-import {Platform, Text, View} from "react-native";
+import {Platform} from "react-native";
 import {CustomTitle, DescriptionText} from "@Custom/Text";
 import {carouselItems} from "@Constants/CarouselItems";
 import CarouselItem from "@Custom/Carousel";
