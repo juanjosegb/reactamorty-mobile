@@ -8,3 +8,9 @@ export const CustomTitle = styled.Text`
     margin-bottom: 30px;
     margin-top: 30px;
 `;
+
+export const DescriptionText = styled.Text`
+  padding: 40px;
+  text-align: center;
+  color: #ED9896;
+`;
