@@ -6,6 +6,7 @@ import {Platform} from "react-native";
 import {CustomTitle, DescriptionText} from "@Custom/Text";
 import {carouselItems} from "@Constants/CarouselItems";
 import CarouselItem from "@Custom/Carousel";
+import {LinearGradient} from 'expo-linear-gradient';
 
 export type Props = { navigation: any }
 
@@ -35,6 +36,17 @@ const HomeScreen = (props: Props) => {
 
     return (
         <Container>
+            <LinearGradient
+                colors={["#87BFCF", "#7dd333"]}
+                style={{
+                    position: 'absolute',
+                    left: 0,
+                    right: 0,
+                    top: 0,
+                    bottom: 0,
+                    height: 800,
+                }}
+            />
             <CustomHeader title={"Home"} navigation={navigation}/>
             <Content padder>
                 <CustomTitle>ReactAmorty</CustomTitle>
