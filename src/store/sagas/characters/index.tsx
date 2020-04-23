@@ -2,20 +2,23 @@ import {all, call, put, takeLatest} from 'redux-saga/effects';
 import {ICharacter} from '@Types/character';
 
 import {IReduxAction} from "@Store/actions";
-import {fetchCharactersCache, fetchCharactersDone, fetchCharactersError} from '@Store/actions/characters';
-import {FETCH_CHARACTERS, FETCH_FILTERED_CHARACTERS} from '@Store/constants/characters';
-import {GetAllCharacters, GetFilteredCharacters} from "@ApiClients/RickAndMorty";
-import {checkDateIsDeprecated} from "@Utils/date";
-import {responseToCharacters} from "@Utils/mappers/responseToCharacters";
+import {fetchAllCharactersDone, fetchCharactersDone, fetchCharactersError} from '@Store/actions/characters';
+import {FETCH_ALL_CHARACTERS, FETCH_CHARACTERS, FETCH_FILTERED_CHARACTERS} from '@Store/constants/characters';
+import {GetAllCharacters, GetAllCharactersByPage, GetFilteredCharacters} from "@ApiClients/RickAndMorty";
 
-function* fetchCharactersAsync(action: IReduxAction) {
+function* fetchCharactersByPageAsync(action: IReduxAction) {
     try {
-        if (checkDateIsDeprecated(action.payload.date) || (action.payload.characters.length === 0)) {
-            const results: ICharacter[] = yield call(GetAllCharacters);
-            yield put(fetchCharactersDone(responseToCharacters(results)));
-        } else {
-            yield put(fetchCharactersCache(action.payload.characters))
-        }
+        const response: any = yield call(GetAllCharactersByPage, action.payload);
+        yield put(fetchCharactersDone({results: response.data.results, pages: response.data.info.pages}));
+    } catch (error) {
+        yield put(fetchCharactersError());
+    }
+}
+
+function* fetchAllCharactersAsync() {
+    try {
+        const results: ICharacter[] = yield call(GetAllCharacters);
+        yield put(fetchAllCharactersDone(results));
     } catch (error) {
         yield put(fetchCharactersError());
     }
@@ -23,8 +26,8 @@ function* fetchCharactersAsync(action: IReduxAction) {
 
 function* fetchFilteredCharactersAsync(action: IReduxAction) {
     try {
-        const results: ICharacter[] = yield call(GetFilteredCharacters, action.payload);
-        yield put(fetchCharactersDone(responseToCharacters(results)));
+        const response: any = yield call(GetFilteredCharacters, action.payload);
+        yield put(fetchCharactersDone({results: response.data.results, pages: response.data.info.pages}));
     } catch (error) {
         yield put(fetchCharactersError());
     }
@@ -32,7 +35,8 @@ function* fetchFilteredCharactersAsync(action: IReduxAction) {
 
 export default function* charactersSaga() {
     yield all([
-        yield takeLatest(FETCH_CHARACTERS, fetchCharactersAsync),
+        yield takeLatest(FETCH_CHARACTERS, fetchCharactersByPageAsync),
+        yield takeLatest(FETCH_ALL_CHARACTERS, fetchAllCharactersAsync),
         yield takeLatest(FETCH_FILTERED_CHARACTERS, fetchFilteredCharactersAsync)]
     )
 }

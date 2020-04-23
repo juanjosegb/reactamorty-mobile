@@ -4,7 +4,7 @@ import {GetAllEpisodes, GetFilteredEpisodes} from "@ApiClients/RickAndMorty";
 import {IReduxAction} from "@Store/actions";
 import {fetchEpisodesCache, fetchEpisodesDone, fetchEpisodesError} from '@Store/actions/episodes';
 import {FETCH_EPISODES, FETCH_FILTERED_EPISODES} from "@Store/constants/episodes";
-import {responseToEpisodes} from "@Utils/mappers/responseToEpisodes";
+import {responseToEpisodes} from "@Utils//mappers/responseToEpisodes";
 import {checkDateIsDeprecated} from "@Utils/date";
 
 import {IEpisode} from "@Types/episode";

@@ -2,7 +2,6 @@ import {IEpisode} from "@Types/episode";
 
 import {
     FETCH_EPISODES,
-    FETCH_EPISODES_CACHE,
     FETCH_EPISODES_DONE,
     FETCH_EPISODES_ERROR,
     FETCH_FILTERED_EPISODES
@@ -35,14 +34,6 @@ export const episodesReducer = (state: IEpisodeState = initialState, action: any
                 isFetching: false,
                 episodes: action.payload,
                 date: new Date(),
-                isError: false
-            };
-
-        case FETCH_EPISODES_CACHE:
-            return {
-                ...state,
-                isFetching: false,
-                episodes: action.payload,
                 isError: false
             };
         case FETCH_EPISODES_ERROR:

@@ -1,32 +1,33 @@
-import {ICharacter, IFilterCharacter} from "@Types/character";
+import {ICharacter, ICharacterWithTotalPages, IFilterCharacter} from "@Types/character";
 
 import {
+    FETCH_ALL_CHARACTERS,
+    FETCH_ALL_CHARACTERS_DONE,
     FETCH_CHARACTERS,
-    FETCH_CHARACTERS_CACHE,
     FETCH_CHARACTERS_DONE,
     FETCH_CHARACTERS_ERROR,
     FETCH_FILTERED_CHARACTERS
 } from "@Store/constants/characters";
 
 import {IReduxAction} from "..";
-import {ICharacterState} from "@Store/reducers/characters";
 
-export const fetchCharacters = (state: ICharacterState): IReduxAction => {
+export const fetchCharacters = (page: number = 1): IReduxAction => {
     return {
         type: FETCH_CHARACTERS,
-        payload: state
+        payload: page
     };
 };
 
-export const fetchCharactersDone = (characters: ICharacter[]): IReduxAction => {
-    return {type: FETCH_CHARACTERS_DONE, payload: characters};
+export const fetchAllCharacters = (): IReduxAction => {
+    return {type: FETCH_ALL_CHARACTERS};
 };
 
-export const fetchCharactersCache = (characters: ICharacter[]): IReduxAction => {
-    return {
-        type: FETCH_CHARACTERS_CACHE,
-        payload: characters
-    }
+export const fetchAllCharactersDone = (characters: ICharacter[]): IReduxAction => {
+    return {type: FETCH_ALL_CHARACTERS_DONE, payload: characters};
+};
+
+export const fetchCharactersDone = (characters: ICharacterWithTotalPages): IReduxAction => {
+    return {type: FETCH_CHARACTERS_DONE, payload: characters};
 };
 
 export const fetchCharactersError = (): IReduxAction => {

@@ -1,13 +1,16 @@
-import React, {useEffect} from 'react';
+import React, {useEffect, useState} from 'react';
 import {Body, Button, Container, Left, ListItem, Right, Thumbnail} from "native-base";
 import {CustomHeader} from "@Components/Common/Header";
-import {fetchCharacters} from "@Store/actions/characters";
-import {getCharacters, ICharacterState} from "@Store/reducers/characters";
+import {fetchFilteredCharacters} from "@Store/actions/characters";
+import {getCharactersFetching, getCurrentCharacters, getCurrentPage, ICharacterState} from "@Store/reducers/characters";
 import {useDispatch, useSelector} from "react-redux";
 import {RootState} from "@Store/reducers";
 import {LinearGradient} from "expo-linear-gradient";
 import {CustomTitle} from "@Custom/Text";
-import {FlatList, SafeAreaView, Text, View} from "react-native";
+import {ActivityIndicator, FlatList, SafeAreaView, Text} from "react-native";
+import {FilterCharacterDefault} from "@Constants/characters";
+import {ICharacter, IFilterCharacter} from "@Types/character";
+import {persistor} from "@Store/index";
 
 export type Props = { navigation: any }
 
@@ -15,11 +18,28 @@ const CharactersScreen = (props: Props) => {
     const {navigation} = props;
     const dispatch = useDispatch();
     const charactersState: ICharacterState = useSelector((state: RootState) => state.charactersState);
+    const [filteredCharacters, setFilteredCharacters] = useState<ICharacter[]>([]);
+    const [filteredValues, setFilteredValues] = useState<IFilterCharacter>(FilterCharacterDefault);
 
     useEffect(() => {
-        console.log(charactersState.characters.length);
-        dispatch(fetchCharacters(charactersState));
+        if (!getCharactersFetching(charactersState) && charactersState.page === 1) {
+            filteredValues.page = 1;
+            setFilteredValues(filteredValues);
+            dispatch(fetchFilteredCharacters(filteredValues));
+        }
     }, []);
+
+    useEffect(() => {
+        setFilteredCharacters(filteredCharacters.concat(getCurrentCharacters(charactersState)));
+    }, [getCurrentCharacters(charactersState)]);
+
+    function onLoadMore() {
+        if (!getCharactersFetching(charactersState)) {
+            filteredValues.page = getCurrentPage(charactersState) + 1;
+            setFilteredValues(filteredValues);
+            dispatch(fetchFilteredCharacters(filteredValues));
+        }
+    }
 
     return (
         <Container>
@@ -36,11 +56,12 @@ const CharactersScreen = (props: Props) => {
             />
             <CustomHeader title={"Characters"} navigation={navigation}/>
             <CustomTitle>Characters</CustomTitle>
-            <SafeAreaView style={{padding: 10, flex: 1, paddingTop: 10}}>
+            <SafeAreaView style={{padding: 10, flex: 1, paddingTop: 10, zIndex: 1}}>
                 <FlatList style={{backgroundColor: "#EFEEEE", borderRadius: 4}}
-                          data={getCharacters(charactersState)}
+                          data={filteredCharacters}
                           keyExtractor={(item, index) => index.toString()}
-                          onEndReachedThreshold={0}
+                          onEndReached={onLoadMore}
+                          onEndReachedThreshold={0.01}
                           renderItem={({item, index, separators}) => (
                               <ListItem thumbnail key={index}>
                                   <Left>
@@ -61,6 +82,21 @@ const CharactersScreen = (props: Props) => {
                 >
                 </FlatList>
             </SafeAreaView>
+            {getCharactersFetching(charactersState) && <SafeAreaView style={{
+                position: "absolute",
+                padding: 10,
+                flex: 1,
+                paddingTop: 10,
+                height: "100%",
+                width: "100%"
+            }}>
+                <ActivityIndicator size={60} color="#7E4896" style={{
+                    zIndex: 3,
+                    flex: 1,
+                    justifyContent: 'center',
+                    alignItems: 'center'
+                }}/>
+            </SafeAreaView>}
         </Container>
     );
 }
