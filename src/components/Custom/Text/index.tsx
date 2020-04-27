@@ -15,3 +15,7 @@ export const DescriptionText = styled.Text`
   color: #7E4896;
   font-weight: bold;
 `;
+
+export const SubTitleText = styled.Text`
+  color: grey;
+`;

@@ -5,4 +5,5 @@ export const CustomSpinner = styled.ActivityIndicator`
     flex: 1;
     justify-content: center;
     align-content: center;
+    margin-top: 100px;
 `;

@@ -6,10 +6,15 @@ import {
     FETCH_CHARACTERS,
     FETCH_CHARACTERS_DONE,
     FETCH_CHARACTERS_ERROR,
+    FETCH_CHARACTERS_START,
     FETCH_FILTERED_CHARACTERS
 } from "@Store/constants/characters";
 
 import {IReduxAction} from "..";
+
+export const fetchCharactersStart = (): IReduxAction => {
+    return {type: FETCH_CHARACTERS_START};
+};
 
 export const fetchCharacters = (page: number = 1): IReduxAction => {
     return {

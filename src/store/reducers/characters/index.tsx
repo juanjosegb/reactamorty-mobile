@@ -6,7 +6,7 @@ import {
     FETCH_ALL_CHARACTERS_DONE,
     FETCH_CHARACTERS,
     FETCH_CHARACTERS_DONE,
-    FETCH_CHARACTERS_ERROR,
+    FETCH_CHARACTERS_ERROR, FETCH_CHARACTERS_START,
     FETCH_FILTERED_CHARACTERS
 } from "@Store/constants/characters";
 
@@ -28,19 +28,23 @@ const initialState: ICharacterState = {
 
 export const charactersReducer = (state: ICharacterState = initialState, action: IReduxAction): ICharacterState => {
     switch (action.type) {
+        case FETCH_CHARACTERS_START:
+            return {
+                ...state,
+                currentCharacters: []
+            };
         case FETCH_CHARACTERS:
             return {
                 ...state,
                 page: action.payload,
                 isFetching: true,
-                currentCharacters: [],
                 totalPages: 0
             };
         case FETCH_CHARACTERS_DONE:
             return {
                 ...state,
                 isFetching: false,
-                currentCharacters: action.payload.results,
+                currentCharacters: [...state.currentCharacters, ...action.payload.results],
                 totalPages: action.payload.pages
             };
         case FETCH_CHARACTERS_ERROR:

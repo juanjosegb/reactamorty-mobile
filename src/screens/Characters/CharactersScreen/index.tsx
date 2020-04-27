@@ -1,7 +1,7 @@
-import React, {useEffect, useState} from 'react';
-import {Body, Button, Container, Left, ListItem, Right, Thumbnail} from "native-base";
+import React, {useEffect} from 'react';
+import {Container} from "native-base";
 import {CustomHeader} from "@Components/Common/Header";
-import {fetchCharacters} from "@Store/actions/characters";
+import {fetchCharacters, fetchCharactersStart} from "@Store/actions/characters";
 import {
     getCharactersFetching,
     getCurrentCharacters,
@@ -12,12 +12,11 @@ import {
 import {useDispatch, useSelector} from "react-redux";
 import {RootState} from "@Store/reducers";
 import {CustomTitle} from "@Custom/Text";
-import {Text} from "react-native";
-import {ICharacter} from "@Types/character";
 import {FlatListView, SpinnerView} from "@Custom/View";
 import {CustomSpinner} from "@Custom/Spinner";
 import {CustomGradient} from "@Custom/Gradient";
 import {CustomFlatList} from "@Custom/FlatList";
+import {CharacterListItem} from "@Components/Common/ListItem";
 
 export type Props = { navigation: any }
 
@@ -25,19 +24,15 @@ const CharactersScreen = (props: Props) => {
     const {navigation} = props;
     const dispatch = useDispatch();
     const charactersState: ICharacterState = useSelector((state: RootState) => state.charactersState);
-    const [filteredCharacters, setFilteredCharacters] = useState<ICharacter[]>([]);
     const currentCharacters = getCurrentCharacters(charactersState);
     const isFetching = getCharactersFetching(charactersState);
     const currentPage = getCurrentPage(charactersState);
     const totalPages = getTotalPages(charactersState);
 
     useEffect(() => {
+        dispatch(fetchCharactersStart());
         dispatch(fetchCharacters(1));
     }, []);
-
-    useEffect(() => {
-        setFilteredCharacters(currentCharacters);
-    }, [currentCharacters]);
 
     function onLoadMore() {
         if (!isFetching && (totalPages > currentPage || totalPages === 0)) {
@@ -52,26 +47,12 @@ const CharactersScreen = (props: Props) => {
             <CustomTitle>Characters</CustomTitle>
             <FlatListView>
                 <CustomFlatList
-                    data={filteredCharacters}
+                    data={currentCharacters}
                     keyExtractor={(item, index) => index.toString()}
                     onEndReached={onLoadMore}
                     onEndReachedThreshold={0.01}
-                    renderItem={({item, index, separators}: any) => (
-                        <ListItem thumbnail key={index}>
-                            <Left>
-                                <Thumbnail square source={{uri: item.image}}/>
-                            </Left>
-                            <Body>
-                                <Text>{item.name}</Text>
-                                <Text
-                                    style={{color: 'grey'}}>{item.gender} | {item.species} | {item.status}</Text>
-                            </Body>
-                            <Right>
-                                <Button transparent>
-                                    <Text>Detail</Text>
-                                </Button>
-                            </Right>
-                        </ListItem>
+                    renderItem={({item, index}: any) => (
+                        <CharacterListItem item={item} index={index}/>
                     )}
                 >
                 </CustomFlatList>
