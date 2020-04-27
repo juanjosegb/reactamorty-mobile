@@ -51,7 +51,7 @@ const CharactersScreen = (props: Props) => {
                     keyExtractor={(item, index) => index.toString()}
                     onEndReached={onLoadMore}
                     onEndReachedThreshold={0.01}
-                    renderItem={({item, index}: any) => (
+                    renderItem={({item, index, separators}: any) => (
                         <CharacterListItem item={item} index={index}/>
                     )}
                 >

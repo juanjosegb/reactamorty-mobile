@@ -3,6 +3,8 @@ import {Body, Button, Left, ListItem, Right, Thumbnail} from "native-base";
 import {Text} from "react-native";
 import {SubTitleText} from "@Custom/Text";
 import {ICharacter} from "@Types/character";
+import {ArrowRight} from "@Custom/Icon";
+import {CustomRight} from "@Custom/Right";
 
 export type Props = { index: number, item: ICharacter }
 
@@ -16,10 +18,10 @@ export const CharacterListItem = (props: Props) => {
             <Text>{item.name}</Text>
             <SubTitleText>{item.gender} | {item.species} | {item.status}</SubTitleText>
         </Body>
-        <Right>
+        <CustomRight>
             <Button transparent>
-                <Text>Detail</Text>
+                <ArrowRight type={"Feather"} name={"chevron-right"}/>
             </Button>
-        </Right>
+        </CustomRight>
     </ListItem>
 }
