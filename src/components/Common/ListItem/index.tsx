@@ -4,9 +4,9 @@ import {Text} from "react-native";
 import {SubTitleText} from "@Custom/Text";
 import {ICharacter} from "@Types/character";
 
-export type Props = {index: number, item: ICharacter}
+export type Props = { index: number, item: ICharacter }
 
-export const CharacterListItem = (props: Props) =>{
+export const CharacterListItem = (props: Props) => {
     const {index, item} = props;
     return <ListItem thumbnail key={index}>
         <Left>
