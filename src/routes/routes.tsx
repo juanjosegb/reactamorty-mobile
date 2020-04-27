@@ -7,7 +7,7 @@ import {Icon} from "native-base";
 import LocationsScreen from "@Screens/LocationsScreen";
 import EpisodesScreen from "@Screens/EpisodesScreen";
 import ComparerScreen from "@Screens/ComparerScreen";
-import CustomDivider from "@Custom/Divider";
+import {CustomDividerDrawer} from "@Custom/Divider";
 import DrawerImage from "@Custom/DrawerImage";
 
 const Drawer = createDrawerNavigator();
@@ -15,7 +15,7 @@ const Drawer = createDrawerNavigator();
 const DrawerContent = (children: any) => (
     <>
         <DrawerImage source={Logo}/>
-        <CustomDivider/>
+        <CustomDividerDrawer/>
         <DrawerItemList {...children} />
     </>
 )

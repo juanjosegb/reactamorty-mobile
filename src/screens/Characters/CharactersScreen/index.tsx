@@ -11,12 +11,12 @@ import {
 } from "@Store/reducers/characters";
 import {useDispatch, useSelector} from "react-redux";
 import {RootState} from "@Store/reducers";
-import {CustomTitle} from "@Custom/Text";
 import {FlatListView, SpinnerView} from "@Custom/View";
 import {CustomSpinner} from "@Custom/Spinner";
 import {CustomGradient} from "@Custom/Gradient";
 import {CustomFlatList} from "@Custom/FlatList";
 import {CharacterListItem} from "@Components/Common/ListItem";
+import {CustomDividerScreenBottom, CustomDividerScreenTop} from "@Custom/Divider";
 
 export type Props = { navigation: any }
 
@@ -44,7 +44,7 @@ const CharactersScreen = (props: Props) => {
         <Container>
             <CustomGradient colors={["#87BFCF", "#7dd333"]}/>
             <CustomHeader title={"Characters"} navigation={navigation}/>
-            <CustomTitle>Characters</CustomTitle>
+            <CustomDividerScreenTop/>
             <FlatListView>
                 <CustomFlatList
                     data={currentCharacters}
@@ -57,6 +57,7 @@ const CharactersScreen = (props: Props) => {
                 >
                 </CustomFlatList>
             </FlatListView>
+            <CustomDividerScreenBottom/>
             {isFetching && <SpinnerView><CustomSpinner size={60} color="#7E4896"/></SpinnerView>}
         </Container>
     );
