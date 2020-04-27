@@ -1,5 +1,5 @@
 import React from 'react';
-import {Body, Button, Left, ListItem, Right, Thumbnail} from "native-base";
+import {Body, Button, Left, ListItem, Thumbnail} from "native-base";
 import {Text} from "react-native";
 import {SubTitleText} from "@Custom/Text";
 import {ICharacter} from "@Types/character";
