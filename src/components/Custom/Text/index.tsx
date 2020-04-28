@@ -23,4 +23,5 @@ export const SubTitleText = styled.Text`
 export const ProfileText = styled.Text`
   color: rgba(0, 0, 0, 0.70);
   padding-bottom: 10px;
+  font-size: 15px;
 `;
