@@ -40,13 +40,13 @@ const HomeScreen = (props: Props) => {
             <CustomHeader title={"Home"} navigation={navigation}>
                 <Icon style={{fontSize: 30}} name="menu" onPress={() => navigation.openDrawer()}/>
             </CustomHeader>
-            <Content padder>
+            <Content padder contentContainerStyle={{justifyContent: "center", alignContent: "center", alignItems: "center"}}>
                 <CustomTitle>ReactAmorty</CustomTitle>
                 <Carousel
                     ref={carouselRef}
                     layout={"default"}
                     data={carouselItems}
-                    sliderWidth={350}
+                    sliderWidth={450}
                     sliderHeight={300}
                     itemWidth={300}
                     renderItem={renderItem}
