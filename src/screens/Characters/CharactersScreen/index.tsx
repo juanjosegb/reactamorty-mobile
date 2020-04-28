@@ -11,7 +11,7 @@ import {
 } from "@Store/reducers/characters";
 import {useDispatch, useSelector} from "react-redux";
 import {RootState} from "@Store/reducers";
-import {FlatListView, SpinnerView} from "@Custom/View";
+import {CustomSafeAreaView, SpinnerView} from "@Custom/View";
 import {CustomSpinner} from "@Custom/Spinner";
 import {CustomGradient} from "@Custom/Gradient";
 import {CustomFlatList} from "@Custom/FlatList";
@@ -47,7 +47,7 @@ const CharactersScreen = (props: Props) => {
                 <Icon style={{fontSize: 30}} name="menu" onPress={() => navigation.openDrawer()}/>
             </CustomHeader>
             <CustomDividerScreenTop/>
-            <FlatListView>
+            <CustomSafeAreaView>
                 <CustomFlatList
                     data={currentCharacters}
                     keyExtractor={(item, index) => index.toString()}
@@ -58,7 +58,7 @@ const CharactersScreen = (props: Props) => {
                     )}
                 >
                 </CustomFlatList>
-            </FlatListView>
+            </CustomSafeAreaView>
             <CustomDividerScreenBottom/>
             {isFetching && <SpinnerView><CustomSpinner size={60} color="#7E4896"/></SpinnerView>}
         </Container>

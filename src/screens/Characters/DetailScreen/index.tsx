@@ -5,6 +5,7 @@ import {CustomGradient} from "@Custom/Gradient";
 import {CustomDividerScreenBottom, CustomDividerScreenTop} from "@Custom/Divider";
 import {Avatar} from "react-native-elements";
 import {CustomTitle, ProfileText} from "@Custom/Text";
+import {ProfileView} from "@Custom/View";
 
 export type Props = { route: any, navigation: any }
 
@@ -20,17 +21,19 @@ const DetailScreen = (props: Props) => {
             <CustomDividerScreenTop/>
             <Content padder contentContainerStyle={{
                 flex: 1,
-                alignItems: 'center',
-                paddingTop: 50
+                alignItems: 'center'
             }}>
-                <Avatar size={200} rounded source={{uri: character.image}}/>
-                <CustomTitle>{character.name}</CustomTitle>
-                <ProfileText>Status: {character.status}</ProfileText>
-                <ProfileText>Species: {character.species}</ProfileText>
-                {character.type !== "" && <ProfileText>Type: {character.type}</ProfileText>}
-                <ProfileText>Gender: {character.gender}</ProfileText>
-                <ProfileText>Origin: {character.origin.name}</ProfileText>
-                <ProfileText>Location: {character.location.name}</ProfileText>
+                <ProfileView>
+                    <Avatar size={200} rounded source={{uri: character.image}}/>
+                    <CustomTitle>{character.name}</CustomTitle>
+                    <ProfileText>Status: {character.status}</ProfileText>
+                    <ProfileText>Species: {character.species}</ProfileText>
+                    {character.type !== "" && <ProfileText>Type: {character.type}</ProfileText>}
+                    <ProfileText>Gender: {character.gender}</ProfileText>
+                    <ProfileText>Origin: {character.origin.name}</ProfileText>
+                    <ProfileText>Location: {character.location.name}</ProfileText>
+                </ProfileView>
+
             </Content>
             <CustomDividerScreenBottom/>
         </Container>
