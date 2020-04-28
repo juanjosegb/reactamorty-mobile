@@ -6,10 +6,10 @@ import {ICharacter} from "@Types/character";
 import {ArrowRight} from "@Custom/Icon";
 import {CustomRight} from "@Custom/Right";
 
-export type Props = { index: number, item: ICharacter }
+export type Props = { index: number, item: ICharacter, navigation: any }
 
 export const CharacterListItem = (props: Props) => {
-    const {index, item} = props;
+    const {index, item, navigation} = props;
     return <ListItem thumbnail key={index}>
         <Left>
             <Thumbnail square source={{uri: item.image}}/>
@@ -20,7 +20,7 @@ export const CharacterListItem = (props: Props) => {
         </Body>
         <CustomRight>
             <Button transparent>
-                <ArrowRight type={"Feather"} name={"chevron-right"}/>
+                <ArrowRight onPress={() => navigation.navigate('DetailCharacter', { character: item })} type={"Feather"} name={"chevron-right"}/>
             </Button>
         </CustomRight>
     </ListItem>

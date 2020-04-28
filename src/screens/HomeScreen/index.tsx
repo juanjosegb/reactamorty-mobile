@@ -1,12 +1,12 @@
 import React, {useRef, useState} from 'react';
-import {Container, Content} from "native-base";
+import {Container, Content, Icon} from "native-base";
 import {CustomHeader} from "@Components/Common/Header";
 import Carousel, {ParallaxImage} from 'react-native-snap-carousel';
 import {Platform} from "react-native";
 import {CustomTitle, DescriptionText} from "@Custom/Text";
 import {carouselItems} from "@Constants/CarouselItems";
 import CarouselItem from "@Custom/Carousel";
-import {LinearGradient} from 'expo-linear-gradient';
+import {CustomGradient} from "@Custom/Gradient";
 
 export type Props = { navigation: any }
 
@@ -36,18 +36,10 @@ const HomeScreen = (props: Props) => {
 
     return (
         <Container>
-            <LinearGradient
-                colors={["#87BFCF", "#7dd333"]}
-                style={{
-                    position: 'absolute',
-                    left: 0,
-                    right: 0,
-                    top: 0,
-                    bottom: 0,
-                    height: 800,
-                }}
-            />
-            <CustomHeader title={"Home"} navigation={navigation}/>
+            <CustomGradient colors={["#87BFCF", "#7dd333"]}/>
+            <CustomHeader title={"Home"} navigation={navigation}>
+                <Icon style={{fontSize: 30}} name="menu" onPress={() => navigation.openDrawer()}/>
+            </CustomHeader>
             <Content padder>
                 <CustomTitle>ReactAmorty</CustomTitle>
                 <Carousel

@@ -1,21 +1,22 @@
 import React from 'react';
-import {Body, Button, Header, Icon, Left} from "native-base";
+import {Body, Button, Header, Left, Right} from "native-base";
 import HeaderTitle from "@Custom/HeaderTitle";
 
-export type Props = { title: string, navigation: any }
+export type Props = { title: string, navigation: any, children: any }
 
 export const CustomHeader = (props: Props) => {
-    const {title, navigation} = props;
+    const {title, children} = props;
     return (
         <Header style={{backgroundColor: '#38B1C8'}}>
-            <Left style={{flex: 2}}>
+            <Left style={{flex: 1}}>
                 <Button transparent>
-                    <Icon style={{fontSize: 30}} name="menu" onPress={() => navigation.openDrawer()}/>
+                    {children}
                 </Button>
             </Left>
-            <Body style={{flex: 3}}>
+            <Body style={{flex: 1, alignItems:'center'}}>
                 <HeaderTitle>{title}</HeaderTitle>
             </Body>
+            <Right style={{flex: 1}}/>
         </Header>
     );
 }

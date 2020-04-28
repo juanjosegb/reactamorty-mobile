@@ -1,5 +1,5 @@
 import React, {useEffect} from 'react';
-import {Container} from "native-base";
+import {Container, Icon} from "native-base";
 import {CustomHeader} from "@Components/Common/Header";
 import {fetchCharacters, fetchCharactersStart} from "@Store/actions/characters";
 import {
@@ -43,7 +43,9 @@ const CharactersScreen = (props: Props) => {
     return (
         <Container>
             <CustomGradient colors={["#87BFCF", "#7dd333"]}/>
-            <CustomHeader title={"Characters"} navigation={navigation}/>
+            <CustomHeader title={"Characters"} navigation={navigation}>
+                <Icon style={{fontSize: 30}} name="menu" onPress={() => navigation.openDrawer()}/>
+            </CustomHeader>
             <CustomDividerScreenTop/>
             <FlatListView>
                 <CustomFlatList
@@ -52,7 +54,7 @@ const CharactersScreen = (props: Props) => {
                     onEndReached={onLoadMore}
                     onEndReachedThreshold={0.01}
                     renderItem={({item, index}: any) => (
-                        <CharacterListItem item={item} index={index}/>
+                        <CharacterListItem navigation={navigation} item={item} index={index}/>
                     )}
                 >
                 </CustomFlatList>

@@ -19,3 +19,8 @@ export const DescriptionText = styled.Text`
 export const SubTitleText = styled.Text`
   color: grey;
 `;
+
+export const ProfileText = styled.Text`
+  color: rgba(0, 0, 0, 0.70);
+  padding-bottom: 10px;
+`;
