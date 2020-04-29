@@ -4,11 +4,11 @@ import {ICharacter} from '@Types/character';
 import {IReduxAction} from "@Store/actions";
 import {fetchAllCharactersDone, fetchCharactersDone, fetchCharactersError} from '@Store/actions/characters';
 import {FETCH_ALL_CHARACTERS, FETCH_CHARACTERS, FETCH_FILTERED_CHARACTERS} from '@Store/constants/characters';
-import {GetAllCharacters, GetAllCharactersByPage, GetFilteredCharacters} from "@ApiClients/RickAndMorty";
+import {GetAllCharacters, GetCharactersByPage, GetFilteredCharacters} from "@ApiClients/RickAndMorty";
 
 function* fetchCharactersByPageAsync(action: IReduxAction) {
     try {
-        const response: any = yield call(GetAllCharactersByPage, action.payload);
+        const response: any = yield call(GetCharactersByPage, action.payload);
         yield put(fetchCharactersDone({results: response.data.results, pages: response.data.info.pages}));
     } catch (error) {
         yield put(fetchCharactersError());

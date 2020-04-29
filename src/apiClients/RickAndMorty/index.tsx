@@ -21,7 +21,7 @@ export const GetAllCharacters = async () => {
     return await concatPages(`character`, numberOfPages);
 };
 
-export const GetAllCharactersByPage = (page: number = 1) => {
+export const GetCharactersByPage = (page: number = 1) => {
     return apiClient.get(`character/?page=${page}`);
 };
 
@@ -38,6 +38,10 @@ export const GetAllLocations = async () => {
     let response = await apiClient.get(`location/`);
     const numberOfPages = getNumberOfPages(response);
     return await concatPages(`location`, numberOfPages);
+};
+
+export const GetLocationsByPage = (page: number = 1) => {
+    return apiClient.get(`location/?page=${page}`);
 };
 
 export const GetLocations = async (ids: any[] = []) => {
@@ -57,6 +61,10 @@ export const GetAllEpisodes = async () => {
     let response = await apiClient.get(`episode/`);
     const numberOfPages = getNumberOfPages(response);
     return (!numberOfPages) ? response.data : await concatPages(`episode/`, numberOfPages);
+};
+
+export const GetEpisodesByPage = (page: number = 1) => {
+    return apiClient.get(`episode/?page=${page}`);
 };
 
 export const GetEpisodes = async (ids: any[] = []) => {

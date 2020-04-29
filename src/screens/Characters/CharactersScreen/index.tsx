@@ -15,8 +15,8 @@ import {CustomSafeAreaView, SpinnerView} from "@Custom/View";
 import {CustomSpinner} from "@Custom/Spinner";
 import {CustomGradient} from "@Custom/Gradient";
 import {CustomFlatList} from "@Custom/FlatList";
-import {CharacterListItem} from "@Components/Common/ListItem";
 import {CustomDividerScreenBottom, CustomDividerScreenTop} from "@Custom/Divider";
+import {CharacterListItem} from "@Components/Common/ListItem/Characters";
 
 export type Props = { navigation: any }
 

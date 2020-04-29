@@ -1,32 +1,28 @@
-import {IFilterLocation, ILocation} from "@Types/location";
+import {IFilterLocation, ILocationWithTotalPages} from "@Types/location";
 
 import {
     FETCH_FILTERED_LOCATIONS,
     FETCH_LOCATIONS,
-    FETCH_LOCATIONS_CACHE,
     FETCH_LOCATIONS_DONE,
-    FETCH_LOCATIONS_ERROR
+    FETCH_LOCATIONS_ERROR,
+    FETCH_LOCATIONS_START
 } from "@Store/constants/locations";
-import {ILocationState} from "@Store/reducers/locations";
 
 import {IReduxAction} from "..";
 
-export const fetchLocations = (state: ILocationState): IReduxAction => {
+export const fetchLocationsStart = (): IReduxAction => {
+    return {type: FETCH_LOCATIONS_START};
+};
+
+export const fetchLocations = (page: number): IReduxAction => {
     return {
         type: FETCH_LOCATIONS,
-        payload: state
+        payload: page
     };
 };
 
-export const fetchLocationsDone = (locations: ILocation[]): IReduxAction => {
+export const fetchLocationsDone = (locations: ILocationWithTotalPages): IReduxAction => {
     return {type: FETCH_LOCATIONS_DONE, payload: locations};
-};
-
-export const fetchLocationsCache = (locations: ILocation[]): IReduxAction => {
-    return {
-        type: FETCH_LOCATIONS_CACHE,
-        payload: locations
-    }
 };
 
 export const fetchLocationsError = (): IReduxAction => {

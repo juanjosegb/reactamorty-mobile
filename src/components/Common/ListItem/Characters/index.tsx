@@ -16,7 +16,7 @@ export const CharacterListItem = (props: Props) => {
         </Left>
         <Body>
             <Text>{item.name}</Text>
-            <SubTitleText>{item.gender} | {item.species} | {item.status}</SubTitleText>
+            <SubTitleText>{item.gender}  |  {item.species}  |  {item.status}</SubTitleText>
         </Body>
         <CustomRight>
             <Button transparent>
