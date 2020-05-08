@@ -30,9 +30,11 @@ const EpisodesScreen = (props: Props) => {
     const totalPages = getTotalPages(episodesState);
 
     useEffect(() => {
-        dispatch(fetchEpisodesStart());
-        dispatch(fetchEpisodes(1));
-    }, []);
+        return navigation.addListener('focus', () => {
+            dispatch(fetchEpisodesStart());
+            dispatch(fetchEpisodes(1));
+        });
+    }, [navigation]);
 
     function onLoadMore() {
         if (!isFetching && (totalPages > currentPage || totalPages === 0)) {

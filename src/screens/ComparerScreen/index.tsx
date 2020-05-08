@@ -6,7 +6,7 @@ import {FlatList, Text} from "react-native";
 import {getCurrentCharacters, ICharacterState} from "@Store/reducers/characters";
 import {useDispatch, useSelector} from "react-redux";
 import {RootState} from "@Store/reducers";
-import {fetchFilteredCharacters} from "@Store/actions/characters";
+import {fetchCharactersStart, fetchFilteredCharacters} from "@Store/actions/characters";
 import {FilterCharacterDefault} from "@Constants/characters";
 import {IFilterCharacter} from "@Types/character";
 
@@ -21,9 +21,11 @@ const ComparerScreen = (props: Props) => {
     const characters = getCurrentCharacters(charactersState);
 
     useEffect(() => {
-        filteredValues.page = 0;
-        dispatch(fetchFilteredCharacters(filteredValues));
-    }, []);
+        return navigation.addListener('focus', () => {
+            dispatch(fetchCharactersStart());
+            setSearch("");
+        });
+    }, [navigation]);
 
     function handleChange(text: string) {
         if (text.length > 3) {

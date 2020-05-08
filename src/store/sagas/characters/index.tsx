@@ -26,8 +26,8 @@ function* fetchAllCharactersAsync() {
 
 function* fetchFilteredCharactersAsync(action: IReduxAction) {
     try {
-        const response: any = yield call(GetFilteredCharacters, action.payload);
-        yield put(fetchCharactersDone({results: response.data.results, pages: response.data.info.pages}));
+        const results: ICharacter[] = yield call(GetFilteredCharacters, action.payload);
+        yield put(fetchAllCharactersDone(results));
     } catch (error) {
         yield put(fetchCharactersError());
     }

@@ -8,7 +8,13 @@ import {CustomDividerScreenBottom, CustomDividerScreenTop} from "@Custom/Divider
 import {CustomGradient} from "@Custom/Gradient";
 import {useDispatch, useSelector} from "react-redux";
 import {RootState} from "@Store/reducers";
-import {getCurrentLocations, getLocationsFetching, getCurrentPage, getTotalPages, ILocationState} from "@Store/reducers/locations";
+import {
+    getCurrentLocations,
+    getCurrentPage,
+    getLocationsFetching,
+    getTotalPages,
+    ILocationState
+} from "@Store/reducers/locations";
 import {fetchLocations, fetchLocationsStart} from "@Store/actions/locations";
 import {CustomSpinner} from "@Custom/Spinner";
 
@@ -24,9 +30,11 @@ const LocationsScreen = (props: Props) => {
     const totalPages = getTotalPages(locationsState);
 
     useEffect(() => {
-        dispatch(fetchLocationsStart());
-        dispatch(fetchLocations(1));
-    }, []);
+        return navigation.addListener('focus', () => {
+            dispatch(fetchLocationsStart());
+            dispatch(fetchLocations(1));
+        });
+    }, [navigation]);
 
     function onLoadMore() {
         if (!isFetching && (totalPages > currentPage || totalPages === 0)) {

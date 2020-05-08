@@ -10,7 +10,7 @@ export const EpisodeListItem = (props: Props) => {
     const {index, item, navigation} = props;
     return <ListItem thumbnail key={index}>
         <Body>
-            <Text numberOfLines={1} style={{ width: 225 }}>{item.name}</Text>
+            <Text numberOfLines={1} style={{ width: 190 }}>{item.name}</Text>
             <SubTitleText>{item.episode}  |  {item.air_date}</SubTitleText>
         </Body>
         <Right>

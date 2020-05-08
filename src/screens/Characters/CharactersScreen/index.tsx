@@ -30,9 +30,11 @@ const CharactersScreen = (props: Props) => {
     const totalPages = getTotalPages(charactersState);
 
     useEffect(() => {
-        dispatch(fetchCharactersStart());
-        dispatch(fetchCharacters(1));
-    }, []);
+        return navigation.addListener('focus', () => {
+            dispatch(fetchCharactersStart());
+            dispatch(fetchCharacters(1));
+        });
+    }, [navigation]);
 
     function onLoadMore() {
         if (!isFetching && (totalPages > currentPage || totalPages === 0)) {
